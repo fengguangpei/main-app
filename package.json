@@ -1,0 +1,58 @@
+{
+  "name": "vue-app",
+  "version": "1.0.0",
+  "description": "vue3 webpack5",
+  "main": "main.js",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.vue"
+  ],
+  "scripts": {
+    "dev": "webpack serve --config ./config/webpack.config.dev.js",
+    "build": "webpack --config ./config/webpack.config.prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconify-json/ep": "^1.1.16",
+    "@vxecli/import-unplugin-vue-components": "^1.0.4",
+    "autoprefixer": "^10.4.20",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.27.0",
+    "eslint-webpack-plugin": "^4.2.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "sass-loader": "^16.0.0",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.10",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-element-plus": "^0.8.0",
+    "unplugin-icons": "^0.19.2",
+    "unplugin-vue-components": "^0.27.4",
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@module-federation/enhanced": "^0.5.0",
+    "element-plus": "^2.8.0",
+    "pinia": "^2.2.2",
+    "qiankun": "^2.10.16",
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3",
+    "vxe-table": "^4.6.18",
+    "xe-utils": "^3.5.30"
+  }
+}

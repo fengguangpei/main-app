@@ -1,0 +1,67 @@
+@for $i from 10 through 200 {
+  .oa-width-#{$i} {
+    width: #{$i}px !important;
+  }
+  .oa-height-#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+.oa-height-100p {
+  height: 100%;
+}
+
+.oa-width-100p {
+  width: 100%;
+}
+@for $i from 10 through 30 {
+  .oa-fz-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+@for $i from 0 through 30 {
+  .oa-mg-#{$i} {
+    margin: #{$i}px !important;
+  }
+  .oa-mg-left-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .oa-mg-right-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .oa-mg-top-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .oa-mg-bottom-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+}
+
+.oa-pointer {
+  cursor: pointer !important;
+}
+
+.oa-flex {
+  display: flex;
+}
+
+.oa-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.oa-primary-color {
+  color: #2561ef;
+}
+
+.oa-warning-color {
+  color: var(--el-color-warning);
+}
+
+.oa-success-color {
+  color: var(--el-color-success);
+}
+
+.oa-danger-color {
+  color: var(--el-color-danger);
+}

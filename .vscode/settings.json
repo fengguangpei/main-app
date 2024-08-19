@@ -1,0 +1,29 @@
+{
+  "stylelint.snippet": [
+    "css",
+    "scss",
+    "sass",
+    "postcss",
+    "vue"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "sass",
+    "postcss",
+    "vue"
+  ],
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+   "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html",
+  }
+}
