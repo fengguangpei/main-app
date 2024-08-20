@@ -39,7 +39,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'images/[name].[contenthash:8].[ext]'
@@ -52,12 +52,12 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.html'),
       urls: [
-        'https://unpkg.com/vue@3.2.45/dist/vue.global.js',
-        'https://unpkg.com/vue-router@4.1.6/dist/vue-router.global.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/vue-demi/0.13.11/index.iife.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/pinia/2.0.32/pinia.iife.js',
-        'https://cdn.jsdelivr.net/npm/xe-utils@3.5.7/dist/xe-utils.umd.min.js',
-        'https://cdn.jsdelivr.net/npm/vxe-table@4.6.17/lib/index.umd.min.js'
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue.js',
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue-router.js',
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue-demi.js',
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/pinia.js',
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/xe-utils.js',
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vxe-table.js'
       ]
     }),
     new VueLoaderPlugin(),
