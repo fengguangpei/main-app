@@ -17,6 +17,14 @@ module.exports = {
     },
     extensions: ['.js', '.ts', '.vue', '.scss', '.css', '.d.ts']
   },
+  externals: {
+    vue: 'Vue',
+    'vue-router': 'VueRouter',
+    'vue-demi': 'VueDemi',
+    pinia: 'Pinia',
+    'xe-utils': 'XEUtils',
+    'vxe-table': 'VXETable'
+  },
   module: {
     rules: [
       {
@@ -43,6 +51,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.html'),
+      urls: [
+        'https://unpkg.com/vue@3.2.45/dist/vue.global.js',
+        'https://unpkg.com/vue-router@4.1.6/dist/vue-router.global.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/vue-demi/0.13.11/index.iife.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/pinia/2.0.32/pinia.iife.js',
+        'https://cdn.jsdelivr.net/npm/xe-utils@3.5.7/dist/xe-utils.umd.min.js',
+        'https://cdn.jsdelivr.net/npm/vxe-table@4.6.17/lib/index.umd.min.js'
+      ]
     }),
     new VueLoaderPlugin(),
     Components({
@@ -73,32 +89,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'federation_provider',
       filename: 'remoteEntry.js',
-      exposes: {
-        './index': './src/index'
-      },
       remotes: {},
-      shared: {
-        "vue": {
-          eager: true
-        },
-        "vue-router": {
-          eager: true
-        },
-        "pinia": {
-          eager: true
-        },
-        "element-plus": {
-          eager: true
-        }
-      }
     })
-    // new ModuleFederationPlugin({
-    //   name: 'federation_provider',
-    //   filename: 'remoteEntry.js',
-    //   exposes: {
-    //     './Tabs': './src/views/Tabs'
-    //   },
-    //   remotes: {}
-    // }),
   ],
 }

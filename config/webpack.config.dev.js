@@ -3,9 +3,6 @@ const base = require('./webpack.config.base')
 const { DefinePlugin } = require('webpack')
 module.exports = merge(base, {
   mode: 'development',
-  // output: {
-  //   publicPath: '//localhost:8080/'
-  // },
   devServer: {
     port: 8080,
     hot: true,
