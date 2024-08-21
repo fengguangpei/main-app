@@ -2,7 +2,6 @@ const { default: merge } = require('webpack-merge')
 const base = require('./webpack.config.base')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { DefinePlugin } = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(base, {
   mode: 'production',
@@ -32,7 +31,6 @@ module.exports = merge(base, {
       __VUE_OPTIONS_API__: false,
       PRODUCTION: true
     }),
-    // new BundleAnalyzerPlugin()
   ],
   optimization: {
     runtimeChunk: 'single',
@@ -44,26 +42,6 @@ module.exports = merge(base, {
           name: 'element',
           chunks: 'all',
         },
-        // vue: {
-        //   test: /[\\/]node_modules[\\/](vue|@vue[\\/]*)[\\/]/,
-        //   name: 'vue',
-        //   chunks: 'all',
-        // },
-        // router: {
-        //   test: /[\\/]node_modules[\\/](vue-router)[\\/]/,
-        //   name: 'vue-router',
-        //   chunks: 'all',
-        // },
-        // pinia: {
-        //   test: /[\\/]node_modules[\\/](pinia)[\\/]/,
-        //   name: 'pinia',
-        //   chunks: 'all',
-        // },
-        // table: {
-        //   test: /[\\/]node_modules[\\/](vxe-table|xe-utils)[\\/]/,
-        //   name: 'vxe-table',
-        //   chunks: 'all',
-        // },
         qiankun: {
           test: /[\\/]node_modules[\\/](qiankun)[\\/]/,
           name: 'qiankun',

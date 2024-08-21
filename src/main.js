@@ -4,7 +4,7 @@ import router from './router/index.js'
 import RefreshPage from './components/RefreshPage.vue'
 import './assets/scss/common.scss'
 import './assets/scss/base.scss'
-import 'vxe-table/lib/style.min.css'
+import('vxe-table/lib/style.min.css')
 import VxeTable from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
 import App from '@/App.vue'

@@ -8,7 +8,7 @@ const { default: AutoImport } = require('unplugin-auto-import/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 const { default: Icons } = require('unplugin-icons/webpack')
 const { default: IconsResolver } = require('unplugin-icons/resolver')
-const { VxeResolver } = require('@vxecli/import-unplugin-vue-components')
+// const { VxeResolver } = require('@vxecli/import-unplugin-vue-components')
 module.exports = {
   entry: path.resolve(__dirname, '../src/main.js'),
   resolve: {
@@ -23,7 +23,8 @@ module.exports = {
     'vue-demi': 'VueDemi',
     pinia: 'Pinia',
     'xe-utils': 'XEUtils',
-    'vxe-table': 'VXETable'
+    'vxe-table': 'VXETable',
+    'qiankun': 'qiankun'
   },
   module: {
     rules: [
@@ -57,7 +58,8 @@ module.exports = {
         'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue-demi.js',
         'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/pinia.js',
         'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/xe-utils.js',
-        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vxe-table.js'
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vxe-table.js',
+        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/qiankun.js'
       ]
     }),
     new VueLoaderPlugin(),
@@ -69,10 +71,10 @@ module.exports = {
         IconsResolver({
           enabledCollections: ['ep']
         }),
-        VxeResolver({
-          libraryName: 'vxe-table',
-          importStyle: true
-        })
+        // VxeResolver({
+        //   libraryName: 'vxe-table',
+        //   importStyle: true
+        // })
       ]
     }),
     AutoImport({

@@ -30,6 +30,5 @@ declare module 'vue' {
     RefreshPage: typeof import('./src/components/RefreshPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    VxeTable: typeof import('vxe-table/es/table/index.js')['VxeTable']
   }
 }
