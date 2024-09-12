@@ -47,7 +47,7 @@ $positions: (
   align-items: flex-end;
   height: 38px;
   padding-top: 6px;
-  z-index: 9997;
+  z-index: 97;
 
   a {
     text-decoration: none;

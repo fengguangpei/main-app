@@ -1,3 +1,5 @@
+import { component } from 'vxe-table';
+
 export const route = [
   {
     name: 'HomePage',
@@ -5,6 +7,13 @@ export const route = [
     parent: '',
     path: '/',
     component: () => import('../views/HomePage.vue')
+  },
+  {
+    name: 'AccountCenter',
+    text: '账号中心',
+    parent: '',
+    path: '/AccountCenter',
+    component: () => import('../views/AccountCenter.vue')
   },
   {
     name: 'RefreshPage',

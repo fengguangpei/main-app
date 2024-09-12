@@ -3,7 +3,7 @@ const base = require('./webpack.config.base')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { DefinePlugin } = require('webpack')
 
-module.exports = merge(base, {
+module.exports = merge(base({ mode: 'production' }), {
   mode: 'production',
   output: {
     publicPath: 'https://fenggp.obs.cn-south-1.myhuaweicloud.com/main-app/',

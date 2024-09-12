@@ -9,7 +9,7 @@ const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 const { default: Icons } = require('unplugin-icons/webpack')
 const { default: IconsResolver } = require('unplugin-icons/resolver')
 // const { VxeResolver } = require('@vxecli/import-unplugin-vue-components')
-module.exports = {
+module.exports = (env, argv) => ({
   entry: path.resolve(__dirname, '../src/main.js'),
   resolve: {
     alias: {
@@ -53,7 +53,9 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.html'),
       urls: [
-        'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue.js',
+        env.mode === 'production'
+          ? 'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue.js'
+          : 'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue.global.js',
         'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue-router.js',
         'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/vue-demi.js',
         'https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/pinia.js',
@@ -79,7 +81,9 @@ module.exports = {
     }),
     AutoImport({
       resolvers: [
-        ElementPlusResolver(),
+        ElementPlusResolver({
+          importStyle: true
+        }),
         IconsResolver({
           prefix: 'Icon',
         }),
@@ -94,4 +98,4 @@ module.exports = {
       remotes: {},
     })
   ],
-}
+})

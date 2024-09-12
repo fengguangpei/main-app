@@ -1,7 +1,7 @@
 const { default: merge } = require('webpack-merge')
 const base = require('./webpack.config.base')
 const { DefinePlugin } = require('webpack')
-module.exports = merge(base, {
+module.exports = merge(base({ mode: 'development' }), {
   mode: 'development',
   devServer: {
     port: 8080,
@@ -9,6 +9,12 @@ module.exports = merge(base, {
     open: false,
     historyApiFallback: true,
     static: 'dist',
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:3001',
+      },
+    ],
   },
   module: {
     rules: [

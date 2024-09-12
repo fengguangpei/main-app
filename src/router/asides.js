@@ -70,6 +70,14 @@ export const menus = {
       group: '用车',
       keepAlive: 'MicroApp'
     }
+  ],
+  hidden: [
+    {
+      text: '账号中心',
+      name: 'AccountCenter',
+      path: '/AccountCenter',
+      keepAlive: 'AccountCenter'
+    }
   ]
 }
 export const description = {

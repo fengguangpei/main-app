@@ -76,7 +76,7 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
     height: 100vh;
     // background-color: #0b1019;
     @apply bg-[#0b1019];
-    z-index: 9999;
+    z-index: 99;
 
     img {
       width: 50px;
@@ -125,7 +125,7 @@ const { focusTab, menu, aside, showMenu } = storeToRefs(menusInstance)
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
-    z-index: 9998;
+    z-index: 98;
 
     &-box {
       padding-top: 16px;

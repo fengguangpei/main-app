@@ -33,6 +33,14 @@ router.onError((err) => {
 /** 全局路由前置钩子 */
 router.beforeEach((to, from, next) => {
   const { name, path, fullPath } = to
+  if (path === '/login') {
+    next()
+  }
+  // 登录验证
+  if (!window.localStorage.getItem('access_token')) {
+    next({ path: '/login', replace: true })
+    return
+  }
   // 刷新路由
   if (path.includes('RefreshPage')) {
     next()

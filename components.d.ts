@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -24,6 +25,7 @@ declare module 'vue' {
     EmployeeCard: typeof import('./src/components/homePage/EmployeeCard.vue')['default']
     IEpCaretTop: typeof import('~icons/ep/caret-top')['default']
     IEpClose: typeof import('~icons/ep/close')['default']
+    IEpEdit: typeof import('~icons/ep/edit')['default']
     IEpHomeFilled: typeof import('~icons/ep/home-filled')['default']
     IEpRefresh: typeof import('~icons/ep/refresh')['default']
     IEpSearch: typeof import('~icons/ep/search')['default']

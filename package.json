@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "dev": "webpack serve --config ./config/webpack.config.dev.js",
-    "build": "webpack --config ./config/webpack.config.prod.js"
+    "build": "webpack --config ./config/webpack.config.prod.js",
+    "analyzer": "webpack --config ./config/webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -48,6 +49,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@module-federation/enhanced": "^0.5.0",
+    "axios": "^1.7.4",
     "element-plus": "^2.8.0",
     "pinia": "^2.2.2",
     "qiankun": "^2.10.16",

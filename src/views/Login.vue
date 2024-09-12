@@ -14,7 +14,7 @@
             ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input v-model="formData.password" placeholder="请输入密码" clearable></el-input>
+            <el-input v-model="formData.password" type="password" placeholder="请输入密码" clearable></el-input>
           </el-form-item>
         </el-form>
         <div class="policy">
@@ -31,7 +31,9 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { ElMessage } from 'element-plus'
+import { axiosInstance } from '../axios';
+import { useRouter } from 'vue-router';
+const router = useRouter()
 const formData = reactive({
   account: '',
   password: '',
@@ -54,15 +56,28 @@ const formRules = {
   ]
 }
 const formInstance = ref()
+// 表单验证
 const formValidate = () => {
   return new Promise((resolve) => {
     formInstance.value.validate((bool) => resolve(bool))
   })
 }
+// 登录
 const login = async () => {
-  const bool = await formValidate()
-  if (bool) {
-    // 进入首页
+  if (!formData.policy) {
+    ElMessage({
+      type: 'warning',
+      message: '请勾选用户隐私政策'
+    })
+  }
+  else if (await formValidate()) {
+    try {
+      const { data } = await axiosInstance.post('/api/auth/login', { username: formData.account, password: formData.password })
+      window.localStorage.setItem('access_token', data.access_token)
+      router.replace({ path: '/' })
+    } catch (error) {
+      console.log(error)
+    }
   } else {
     ElMessage({
       type: 'warning',
@@ -76,13 +91,13 @@ const login = async () => {
 .login {
   width: 100%;
   height: 100%;
-  background-image: url('../assets/images/login.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url('../assets/images/login.png');
+  // background-repeat: no-repeat;
+  // background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   .form {
     width: 440px;
     height: 600px;
@@ -90,6 +105,7 @@ const login = async () => {
     border-radius: 16px;
     display: flex;
     justify-content: center;
+    box-shadow: 11px 10px 15px -3px rgba(0,0,0,0.1), -11px -10px 15px -3px rgba(0,0,0,0.1);;
 
     &-inner {
       display: flex;
