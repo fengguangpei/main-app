@@ -1,5 +1,5 @@
 module.exports = {
-  root: true,
+  // root: true,
   // extends: ['plugin:@typescript-eslint/recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   extends: ['plugin:vue/vue3-recommended', 'prettier'],
   parserOptions: {
@@ -10,12 +10,12 @@ module.exports = {
   parser: 'vue-eslint-parser',
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   rules: {
     'prettier/prettier': 'warn',
     'vue/attributes-order': 'off',
     'vue/multi-word-component-names': 'off',
-    'no-console': 'warn'
-  }
+    'no-console': 'warn',
+  },
 }

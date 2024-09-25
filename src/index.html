@@ -1,19 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/favicon.ico" />
-  <title>OA办公管理系统</title>
-  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_2952546_2rdqr03cyur.css" />    
-  <% for (var url in htmlWebpackPlugin.options.urls) { %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fenggp.obs.cn-south-1.myhuaweicloud.com/externals/favicon.ico" />
+    <title>OA办公管理系统</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_2952546_2rdqr03cyur.css" />
+    <% for (var url in htmlWebpackPlugin.options.urls) { %>
     <script src="<%=htmlWebpackPlugin.options.urls[url]%>" defer></script>
     <%}%>
-</head>
+  </head>
 
-<body>
-  <div id="app"></div>
-</body>
-
+  <body>
+    <div id="app"></div>
+  </body>
 </html>

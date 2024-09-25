@@ -14,7 +14,12 @@
             ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input v-model="formData.password" type="password" placeholder="请输入密码" clearable></el-input>
+            <el-input
+              v-model="formData.password"
+              type="password"
+              placeholder="请输入密码"
+              clearable
+            ></el-input>
           </el-form-item>
         </el-form>
         <div class="policy">
@@ -31,29 +36,29 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { axiosInstance } from '../axios';
-import { useRouter } from 'vue-router';
+import { axiosInstance } from '../axios'
+import { useRouter } from 'vue-router'
 const router = useRouter()
 const formData = reactive({
   account: '',
   password: '',
-  policy: true
+  policy: true,
 })
 const formRules = {
   account: [
     {
       validator(rule, value, callback) {
         value ? callback() : callback('请输入手机号或工号')
-      }
-    }
+      },
+    },
   ],
   password: [
     {
       validator(rule, value, callback) {
         value ? callback() : callback('请输入密码')
-      }
-    }
-  ]
+      },
+    },
+  ],
 }
 const formInstance = ref()
 // 表单验证
@@ -67,12 +72,14 @@ const login = async () => {
   if (!formData.policy) {
     ElMessage({
       type: 'warning',
-      message: '请勾选用户隐私政策'
+      message: '请勾选用户隐私政策',
     })
-  }
-  else if (await formValidate()) {
+  } else if (await formValidate()) {
     try {
-      const { data } = await axiosInstance.post('/api/auth/login', { username: formData.account, password: formData.password })
+      const { data } = await axiosInstance.post('/api/auth/login', {
+        username: formData.account,
+        password: formData.password,
+      })
       window.localStorage.setItem('access_token', data.access_token)
       router.replace({ path: '/' })
     } catch (error) {
@@ -81,7 +88,7 @@ const login = async () => {
   } else {
     ElMessage({
       type: 'warning',
-      message: '请输入手机号/工号/密码'
+      message: '请输入手机号/工号/密码',
     })
   }
 }
@@ -97,7 +104,7 @@ const login = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   .form {
     width: 440px;
     height: 600px;
@@ -105,7 +112,9 @@ const login = async () => {
     border-radius: 16px;
     display: flex;
     justify-content: center;
-    box-shadow: 11px 10px 15px -3px rgba(0,0,0,0.1), -11px -10px 15px -3px rgba(0,0,0,0.1);;
+    box-shadow:
+      11px 10px 15px -3px rgba(0, 0, 0, 0.1),
+      -11px -10px 15px -3px rgba(0, 0, 0, 0.1);
 
     &-inner {
       display: flex;

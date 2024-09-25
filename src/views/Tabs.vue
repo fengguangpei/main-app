@@ -32,7 +32,7 @@ const { statusTabs } = storeToRefs(tabsInstance)
 $positions: (
   'active': 6px 6px 0 0,
   'activeLeft': 0 0 6px 0,
-  'activeRight': 0 0 0 6px
+  'activeRight': 0 0 0 6px,
 );
 @each $p, $value in $positions {
   .#{$p} {

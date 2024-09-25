@@ -8,7 +8,7 @@ import('vxe-table/lib/style.min.css')
 import VxeTable from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
 import App from '@/App.vue'
-import { prefetchApps } from 'qiankun'
+// import { prefetchApps } from 'qiankun'
 import vTip from './directives/vTip.js'
 const app = createApp(App)
 app.directive('tip', vTip)
@@ -27,7 +27,10 @@ Object.entries(globalProperties).forEach(([key, value]) => {
 })
 app.use(router).use(pinia).use(useTable).mount('#app')
 app.component(RefreshPage)
-const microAppEntry = PRODUCTION ? 'https://fenggp.obs.cn-south-1.myhuaweicloud.com/micro-app/index.html' : '//localhost:8081'
+// eslint-disable-next-line no-unused-vars, no-undef
+const microAppEntry = PRODUCTION
+  ? 'https://fenggp.obs.cn-south-1.myhuaweicloud.com/micro-app/index.html'
+  : '//localhost:8081'
 // prefetchApps([{ name: 'micro-app', entry: microAppEntry }])
 document.addEventListener('touchstart', function (event) {
   if (event.touches.length > 1) {
@@ -44,5 +47,5 @@ document.addEventListener(
     }
     lastTouchEnd = now
   },
-  false
+  false,
 )
