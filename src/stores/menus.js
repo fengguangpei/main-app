@@ -19,7 +19,7 @@ export const useMenusStore = defineStore('menus', () => {
       } else {
         map.set(item.group, {
           text: item.group,
-          children: [item]
+          children: [item],
         })
       }
     })
@@ -39,6 +39,6 @@ export const useMenusStore = defineStore('menus', () => {
     aside,
     showMenu,
     changeMenu,
-    changeFocusTab
+    changeFocusTab,
   }
 })

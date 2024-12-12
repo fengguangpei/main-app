@@ -20,8 +20,8 @@ export const useTabsStore = defineStore('tabs', () => {
       name: 'HomePage',
       text: '首页',
       path: '/',
-      keepAlive: 'HomePage'
-    }
+      keepAlive: 'HomePage',
+    },
   ])
   // 激活aside
   const activeAside = computed(() => {
@@ -37,9 +37,9 @@ export const useTabsStore = defineStore('tabs', () => {
         class: {
           activedItem: index === current,
           activedRight: index === current + 1,
-          activedLeft: index === current - 1
+          activedLeft: index === current - 1,
         },
-        line: index !== current && index !== current - 1
+        line: index !== current && index !== current - 1,
       }
     })
   })
@@ -64,7 +64,7 @@ export const useTabsStore = defineStore('tabs', () => {
       const item = tabs[tmp]
       activeName.value = item.name
       router.replace({
-        path: item.path
+        path: item.path,
       })
     }
   }
@@ -87,6 +87,6 @@ export const useTabsStore = defineStore('tabs', () => {
     addTab,
     changeTab,
     closeTab,
-    changeExcludeTab
+    changeExcludeTab,
   }
 })

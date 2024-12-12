@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue')
+    component: () => import('../views/Login.vue'),
   },
   {
     path: '/',
@@ -16,14 +16,14 @@ const routes = [
       ...route,
       {
         path: '/:all(.*)*',
-        component: () => import('../views/MicroApp.vue')
-      }
-    ]
-  }
+        component: () => import('../views/MicroApp.vue'),
+      },
+    ],
+  },
 ]
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 router.onError((err) => {
   // eslint-disable-next-line no-console
@@ -70,7 +70,7 @@ async function initMicroApp() {
   // 重新挂载
   if (flag === 'remount') {
     microApp.update({
-      remount: true
+      remount: true,
     })
     flag = 'mounted'
   }
@@ -82,11 +82,11 @@ async function initMicroApp() {
     microApp = loadMicroApp({
       name: 'micro-app',
       entry,
-      container: '#micro-one'
+      container: '#micro-one',
     })
     await microApp.mountPromise
     microApp.update({
-      $rootRouter: router
+      $rootRouter: router,
     })
     flag = 'mounted'
   }
@@ -98,7 +98,7 @@ async function unmountMicroApp() {
   const { keepAlive } = tabsInstance
   if (!keepAlive.includes('MicroApp') && microApp) {
     await microApp.update({
-      unmount: true
+      unmount: true,
     })
     flag = 'remount'
   }

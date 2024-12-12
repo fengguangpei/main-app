@@ -27,7 +27,7 @@
           :tree-config="{
             transform: true,
             rowField: 'code',
-            parentField: 'parentCode'
+            parentField: 'parentCode',
           }"
         >
           <vxe-table-column type="checkbox" width="46px" align="center"></vxe-table-column>

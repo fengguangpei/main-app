@@ -9,7 +9,7 @@
         :class="{
           group: true,
           'aside-item': true,
-          'aside-item__active': item.name === (showMenu ? focusTab : activeAside)
+          'aside-item__active': item.name === (showMenu ? focusTab : activeAside),
         }"
         @click="changeFocusTab(item.name), changeMenu(true)"
       >
@@ -44,7 +44,11 @@
           </keep-alive>
         </router-view>
         <!-- 微应用 -->
-        <div id="micro-one" class="oa-width-100p oa-height-100p" v-show="activeAside === 'Card'"></div>
+        <div
+          id="micro-one"
+          class="oa-width-100p oa-height-100p"
+          v-show="activeAside === 'Card'"
+        ></div>
       </div>
       <div class="mask" v-show="showMenu" @click.stop="changeMenu(false)"></div>
     </div>

@@ -1,8 +1,6 @@
 <template>
   <div class="info">
-    <div class="title">
-      账号信息
-    </div>
+    <div class="title">账号信息</div>
     <div class="body">
       <el-avatar :size="80" :src="avatarUrl" />
       <div class="right">
@@ -16,18 +14,16 @@
       </div>
     </div>
   </div>
-  <div class="setting">
-
-  </div>
+  <div class="setting"></div>
 </template>
 
 <script setup>
 const avatarUrl = ''
 const info = {
-  '用户名': '用户名',
-  '真实姓名': '111',
-  '手机号码': '1111',
-  '邮箱': '111'
+  用户名: '用户名',
+  真实姓名: '111',
+  手机号码: '1111',
+  邮箱: '111',
 }
 </script>
 
@@ -61,12 +57,11 @@ const info = {
         display: flex;
         align-items: center;
         .value {
-         margin: 0 18px;
-         color: #0b1019;
+          margin: 0 18px;
+          color: #0b1019;
         }
       }
     }
   }
 }
-
 </style>
