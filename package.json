@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@iconify-json/ep": "^1.1.16",
+    "@sentry/webpack-plugin": "^2.22.7",
     "@vxecli/import-unplugin-vue-components": "^1.0.4",
     "autoprefixer": "^10.4.20",
     "css-loader": "^7.1.2",
@@ -49,6 +50,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@module-federation/enhanced": "^0.5.0",
+    "@sentry/vue": "^8.46.0",
     "axios": "^1.7.4",
     "element-plus": "^2.8.0",
     "pinia": "^2.2.2",
