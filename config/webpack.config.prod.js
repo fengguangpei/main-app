@@ -37,7 +37,16 @@ module.exports = merge(base({ mode: 'production' }), {
       org: 'fengguangpei',
       project: 'oa-main-app',
       authToken: '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',
-      telemetry: false
+      telemetry: false,
+      sourcemaps: {
+        filesToDeleteAfterUpload: 'dist/**.js.map'
+      },
+      release: {
+        create: true,
+        setCommits: {
+          auto: true,
+        },
+      },
     })
   ],
   optimization: {

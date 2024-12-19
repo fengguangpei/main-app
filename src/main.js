@@ -8,9 +8,20 @@ import('vxe-table/lib/style.min.css')
 import VxeTable from 'vxe-table'
 import globalProperties from './assets/js/globalProperties.js'
 import App from '@/App.vue'
+import * as Sentry from '@sentry/vue'
 // import { prefetchApps } from 'qiankun'
 import vTip from './directives/vTip.js'
 const app = createApp(App)
+// sentry
+Sentry.init({
+  app,
+  dsn: 'https://62fb4c6d8ccd6deb2e70561ecd834d31@o4505437757243392.ingest.us.sentry.io/4508488943009792',
+  integrations: [Sentry.browserTracingIntegration({ router }), Sentry.replayIntegration()],
+  tracesSampleRate: 1.0,
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+})
+// global directive
 app.directive('tip', vTip)
 // pinia
 const pinia = createPinia()

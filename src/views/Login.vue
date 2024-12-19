@@ -83,6 +83,7 @@ const login = async () => {
       window.localStorage.setItem('access_token', data.access_token)
       router.replace({ path: '/' })
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error)
     }
   } else {

@@ -88,7 +88,7 @@
     </div>
     <!-- 操作 -->
     <div class="operatr-section">
-      <el-button plain> 新增员工 </el-button>
+      <el-button plain @click="addEmployee"> 新增员工 </el-button>
       <refresh-page></refresh-page>
     </div>
     <!-- 表格 -->
@@ -145,14 +145,14 @@ const searchValue = ref('')
 const dateTypes = reactive([
   {
     id: 'joinDate',
-    name: '入职时间'
-  }
+    name: '入职时间',
+  },
 ])
 const searchTypes = reactive([
   {
     id: '工号',
-    name: '工号'
-  }
+    name: '工号',
+  },
 ])
 const reset = () => {
   apartment.value = []
@@ -161,15 +161,16 @@ const reset = () => {
   dateValue.value = []
   searchValue.value = ''
 }
+const addEmployee = () => {
+  myUndefineFunction()
+}
 // 表格
 const tableData = ref([])
-const getTableData = async () => {
-  console.log(pagination)
-}
+const getTableData = async () => {}
 // 分页
 const pagination = reactive({
   size: 20,
-  currentPage: 1
+  currentPage: 1,
 })
 </script>
 
