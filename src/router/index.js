@@ -37,10 +37,10 @@ router.beforeEach((to, from, next) => {
     next()
   }
   // 登录验证
-  if (!window.localStorage.getItem('access_token')) {
-    next({ path: '/login', replace: true })
-    return
-  }
+  // if (!window.localStorage.getItem('access_token')) {
+  //   next({ path: '/login', replace: true })
+  //   return
+  // }
   // 刷新路由
   if (path.includes('RefreshPage')) {
     next()

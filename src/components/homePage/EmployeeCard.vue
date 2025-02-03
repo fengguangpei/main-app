@@ -28,43 +28,44 @@ const employees = reactive([
     name: '在职员工',
     icon: '',
     count: 0,
-    color: '#2561ef'
+    color: '#2561ef',
   },
   {
     name: '待入职员工',
     icon: 'icon-yuangong',
     count: 0,
-    color: '#666ee8'
+    color: '#666ee8',
   },
   {
     name: '试用期员工',
     icon: '',
     count: 0,
-    color: '#3DD4A7'
+    color: '#3DD4A7',
   },
   {
     name: '正式员工',
     icon: '',
     count: 0,
-    color: '#fa746b'
+    color: '#fa746b',
   },
   {
     name: '待离职员工',
     icon: '',
     count: 0,
-    color: '#fddb78'
+    color: '#fddb78',
   },
   {
     name: '已离职员工',
     icon: '',
     count: 0,
-    color: '#ccc'
-  }
+    color: '#ccc',
+  },
 ])
 const redirectDetail = () => {
-  $router.push({
-    path: '/CarManage/123'
-  })
+  throw new Error('this is an error')
+  // $router.push({
+  //   path: '/CarManage/123',
+  // })
 }
 </script>
 
