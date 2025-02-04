@@ -21,7 +21,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
-
+import * as Sentry from '@sentry/vue'
 const $router = useRouter()
 const employees = reactive([
   {
@@ -62,7 +62,7 @@ const employees = reactive([
   },
 ])
 const redirectDetail = () => {
-  throw new Error('this is an error')
+  Sentry.captureMessage('thisIsMessage')
   // $router.push({
   //   path: '/CarManage/123',
   // })
